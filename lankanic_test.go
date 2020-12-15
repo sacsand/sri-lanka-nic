@@ -1,4 +1,4 @@
-package lankanic
+package srilankanic
 
 import "testing"
 

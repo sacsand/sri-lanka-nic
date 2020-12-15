@@ -1,4 +1,4 @@
-package lankanic
+package srilankanic
 
 type Result struct {
 	isValidated bool

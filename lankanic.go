@@ -1,4 +1,4 @@
-package lankanic
+package srilankanic
 
 type month struct {
 	month string

@@ -1,4 +1,4 @@
-package main
+package srilankanic
 
 import "fmt"
 
