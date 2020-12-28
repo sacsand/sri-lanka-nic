@@ -1,9 +1,15 @@
 package srilankanic
 
+type Month struct {
+	month string
+	days  int
+}
+
 type Result struct {
 	isValidated bool
+	year        int
 	input       string
-	format      string
+	inputFormat string
 	newFormat   string
 	oldFormat   string
 	nicLength   int
@@ -11,9 +17,3 @@ type Result struct {
 	character   string
 	birthday    string
 }
-
-// type config struct {
-// 	result result
-// 	isValid bool
-
-// }
