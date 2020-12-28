@@ -58,7 +58,7 @@ monthList := []month{
 
 
 func Validate(nationalIdNumber string) bool{
-fmt.PrintLn("dkfkdfjiodsj")
+
 return false;
 }
 
