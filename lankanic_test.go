@@ -19,11 +19,46 @@ var result2 = Result{
 	birthday:    "12/08/2001",
 }
 
+// var result1 = Result{
+// 	isValidated: true,
+// 	input:       "931260723v",
+// 	inputFormat: "old",
+// 	newFormat:   "199312600723",
+// 	oldFormat:   "931260723v",
+// 	nicLength:   10,
+// 	gender:      "Male",
+// 	character:   "--",
+// 	birthday:    "05/05/1993",
+// }
+
+var result1 = Result{
+	isValidated: true,
+	input:       "199312600723",
+	inputFormat: "old",
+	newFormat:   "199312600723",
+	oldFormat:   "931260723v",
+	nicLength:   12,
+	gender:      "Male",
+	character:   "--",
+	birthday:    "05/05/1993",
+}
+
+var 
+
 func TestINFO(t *testing.T) {
 	assert := assert.New(t)
 
 	res := Info("200184300068")
 	assert.Equal(res, result2)
+
+	fmt.Println()
+}
+
+func TestINFOOld(t *testing.T) {
+	assert := assert.New(t)
+
+	res := Info("199312600723")
+	assert.Equal(res, result1)
 
 	fmt.Println()
 }

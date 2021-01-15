@@ -3,6 +3,7 @@ package srilankanic
 import (
 	"fmt"
 	"strconv"
+	"strings"
 )
 
 var monthList = []Month{
@@ -64,6 +65,10 @@ var monthList = []Month{
 // 	return "dsfsd"
 // }
 
+func replaceAtIndex(input string, replacement byte, index int) string {
+	return strings.Join([]string{input[:index], string(replacement), input[index+1:]}, "")
+}
+
 // Info ..
 func Info(nic string) Result {
 
@@ -73,43 +78,67 @@ func Info(nic string) Result {
 
 	if nicLength == 12 {
 
-		data.input = nic
-		data.inputFormat = "new"
-		c := nic[0:4]
-
+		c := nic[0:4] //susbstring like js
 		year, _ := strconv.Atoi(c)
 
+		fmt.Println(year)
+
+		data.isValidated = true
+		data.input = nic
+		data.inputFormat = "new"
 		data.year = year
 		data.nicLength = 12
-		data.character = ""
+		data.birthday = "05/05/1993"
+		data.character = "v"
+		data.dayNo = "v"
+		data.gender = "Male"
 
 		fmt.Println(data)
 
+		//if nic[0:2] == "19" {
+
+		st10 := nic[2:12]
+		fmt.Println(st10)
+		// st10 =
+		b := byte(0)
+		news := replaceAtIndex(st10, b, 5)
+		fmt.Println(news)
+		news = news + "v"
+		fmt.Println(news)
+		data.oldFormat = news
+
 	}
 
-	// type Result struct {
-	// 	isValidated bool
-	// 	year        int
-	// 	input       string
-	// 	inputFormat string
-	// 	newFormat   string
-	// 	oldFormat   string
-	// 	nicLength   int
-	// 	gender      string
-	// 	character   string
-	// 	birthday    string
-	// }
+	if nicLength == 10 {
 
-	// details := Result{
-	// 	isValidated: true,
-	// 	input:       "200184300068",
-	// 	format:      "new",
-	// 	newFormat:   "200184300068",
-	// 	oldFormat:   "--",
-	// 	nicLength:   12,
-	// 	gender:      "Female",
-	// 	character:   "--",
-	// 	birthday:    "12/08/2001",
-	// }
+		c := nic[0:2] //susbstring like js
+		year, _ := strconv.Atoi(c)
+
+		fmt.Println(year)
+
+		data.isValidated = true
+		data.input = nic
+		data.inputFormat = "old"
+		data.year = year
+		data.nicLength = 12
+		data.birthday = "05/05/1993"
+		data.character = "v"
+		data.gender = "Male"
+
+		fmt.Println(data)
+
+		//if nic[0:2] == "19" {
+
+		st10 := nic[2:12]
+		fmt.Println(st10)
+		// st10 =
+		b := byte(0)
+		news := replaceAtIndex(st10, b, 5)
+		fmt.Println(news)
+		news = news + "v"
+		fmt.Println(news)
+		data.oldFormat = news
+
+	}
 	return data
 }
