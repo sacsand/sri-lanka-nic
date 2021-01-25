@@ -7,18 +7,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var result2 = Result{
-	isValidated: true,
-	input:       "200184300068",
-	inputFormat: "new",
-	newFormat:   "200184300068",
-	oldFormat:   "--",
-	nicLength:   12,
-	gender:      "Female",
-	character:   "--",
-	birthday:    "12/08/2001",
-}
-
 // var result1 = Result{
 // 	isValidated: true,
 // 	input:       "931260723v",
@@ -31,19 +19,18 @@ var result2 = Result{
 // 	birthday:    "05/05/1993",
 // }
 
-var result1 = Result{
+var result2 = Result{
 	isValidated: true,
-	input:       "199312600723",
-	inputFormat: "old",
-	newFormat:   "199312600723",
-	oldFormat:   "931260723v",
+	input:       "200184300068",
+	year:        2001,
+	inputFormat: "new",
+	newFormat:   "200184300068",
+	oldFormat:   "--",
 	nicLength:   12,
-	gender:      "Male",
+	gender:      "Female",
 	character:   "--",
-	birthday:    "05/05/1993",
+	birthday:    "12/08/2001",
 }
-
-var 
 
 func TestINFO(t *testing.T) {
 	assert := assert.New(t)
@@ -52,6 +39,19 @@ func TestINFO(t *testing.T) {
 	assert.Equal(res, result2)
 
 	fmt.Println()
+}
+
+var result1 = Result{
+	isValidated: true,
+	input:       "199312600723",
+	year:        1993,
+	inputFormat: "old",
+	newFormat:   "199312600723",
+	oldFormat:   "931260723v",
+	nicLength:   12,
+	gender:      "Male",
+	character:   "--",
+	birthday:    "05/05/1993",
 }
 
 func TestINFOOld(t *testing.T) {
