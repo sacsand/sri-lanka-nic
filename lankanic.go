@@ -32,7 +32,11 @@ func Info(nic string) Result {
 		data.nicLength = 12
 		data.birthday = "12/08/2001"
 		data.character = "--"
-		// data.dayNo = "v"
+		s := nic[3:4]
+
+		dayNo, _ := strconv.Atoi(s)
+
+		data.dayNo = string(dayNo)
 		data.gender = "Female"
 		data.newFormat = nic
 		data.oldFormat = "--" // defaualt
@@ -44,12 +48,11 @@ func Info(nic string) Result {
 			st10 := nic[1:12]
 
 			// st10 =
-			b := byte(0)
-			news := replaceAtIndex(st10, b, 5)
-			fmt.Println(news)
-			news = news + "v"
-			fmt.Println(news)
-			data.oldFormat = news
+			// b := byte(0)
+			// news := replaceAtIndex(st10, b, 5)
+			s := []rune(st10)
+			res := delChar(s, 5)
+			data.oldFormat = string(res) + "v"
 		}
 
 	}
@@ -61,7 +64,7 @@ func Info(nic string) Result {
 
 		data.isValidated = true
 		data.input = nic
-		data.inputFormat = "new"
+		data.inputFormat = "old"
 		data.year = year
 		data.nicLength = 12
 		data.birthday = "05/05/1993"

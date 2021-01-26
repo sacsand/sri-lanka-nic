@@ -19,33 +19,33 @@ import (
 // 	birthday:    "05/05/1993",
 // }
 
-var result2 = Result{
-	isValidated: true,
-	input:       "200184300068",
-	year:        2001,
-	inputFormat: "new",
-	newFormat:   "200184300068",
-	oldFormat:   "--",
-	nicLength:   12,
-	gender:      "Female",
-	character:   "--",
-	birthday:    "12/08/2001",
-}
+// var result2 = Result{
+// 	isValidated: true,
+// 	input:       "200184300068",
+// 	year:        2001,
+// 	inputFormat: "new",
+// 	newFormat:   "200184300068",
+// 	oldFormat:   "--",
+// 	nicLength:   12,
+// 	gender:      "Female",
+// 	character:   "--",
+// 	birthday:    "12/08/2001",
+// }
 
-func TestINFO(t *testing.T) {
-	assert := assert.New(t)
+// func TestINFO(t *testing.T) {
+// 	assert := assert.New(t)
 
-	res := Info("200184300068")
-	assert.Equal(res, result2)
+// 	res := Info("200184300068")
+// 	assert.Equal(res, result2)
 
-	fmt.Println()
-}
+// 	fmt.Println()
+// }
 
 var result1 = Result{
 	isValidated: true,
 	input:       "199312600723",
 	year:        1993,
-	inputFormat: "old",
+	inputFormat: "new",
 	newFormat:   "199312600723",
 	oldFormat:   "931260723v",
 	nicLength:   12,
